@@ -6,16 +6,18 @@ package paquete004;
 
 import paquete001.Persona;
 import paquete002.Propiedad;
+import paquete003.*;
 
 /**
  *
  * @author reroes
  */
-public class PagoPredial {
-    public double calcularPago(){
+public class PagoPredial extends TipoPago {
+    
+    @Override
+    public void calcularPagos(){
         double valorPropiedad = 56000;
         double porcentaje = 10;
-        double pago = valorPropiedad - ((valorPropiedad*porcentaje)/100);
-        return pago;
+        pagos = valorPropiedad - ((valorPropiedad*porcentaje)/100);
     }
 }

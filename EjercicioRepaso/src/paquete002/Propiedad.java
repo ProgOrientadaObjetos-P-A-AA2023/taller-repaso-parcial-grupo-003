@@ -10,4 +10,17 @@ package paquete002;
  */
 public class Propiedad {
     public double costoPropiedad;
+    
+    public Propiedad(double c) {
+        costoPropiedad = c;
+    }
+    
+    public void establecerCostoPropiedad(double c) {
+        costoPropiedad = c;
+    }
+    
+    public double obtenerCostoPropiedad() {
+        return costoPropiedad;
+    }
+    
 }

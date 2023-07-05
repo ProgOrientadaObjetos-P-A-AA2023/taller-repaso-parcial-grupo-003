@@ -10,4 +10,17 @@ package paquete002;
  */
 public class Ciudad {
     String nombreCiudad;
+    
+    public Ciudad(String n) {
+        nombreCiudad = n;
+    }
+    
+    public void establecerNombreCiudad(String n) {
+        nombreCiudad = n;
+    }
+    
+    public String obtenerNombreCiudad() {
+        return nombreCiudad;
+    }
+    
 }
