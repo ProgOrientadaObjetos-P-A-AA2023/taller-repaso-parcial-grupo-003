@@ -74,7 +74,7 @@ public class BilleteraPagos {
             Se debe presentar el reporte que incluya
             información correspondiente oportuna
         */
-        String reporte = "Billetera Personal\n";
+        String reporte = "BILLETRA PAGO\n";
         
         reporte = String.format("%sCliente: %s %s\n"
                 + "Edad: %d\n"

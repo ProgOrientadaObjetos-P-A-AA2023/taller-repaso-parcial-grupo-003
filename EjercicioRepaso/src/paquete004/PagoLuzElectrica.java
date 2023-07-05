@@ -14,6 +14,9 @@ import paquete003.*;
 public class PagoLuzElectrica extends TipoPago {
     
     private String ciudad;
+    double tarifaBase;
+    double kilovatiosConsumidos;
+    double costoKilovatio;
     
     public PagoLuzElectrica(String c) {
         ciudad = c;
@@ -22,13 +25,31 @@ public class PagoLuzElectrica extends TipoPago {
     @Override
     public void calcularPagos() {
         //double pago = 0;
-        double tarifaBase = 10.20;
-        double kilovatiosConsumidos = 80;
-        double costoKilovatio = 0.5;
+        tarifaBase = 10.20;
+        kilovatiosConsumidos = 80;
+        costoKilovatio = 0.5;
         if (ciudad.equals("Loja")) {
             pagos = tarifaBase + (kilovatiosConsumidos * costoKilovatio / 2);
         } else {
             pagos = tarifaBase + (kilovatiosConsumidos * costoKilovatio);
         }
     }
+    
+    @Override
+    public String toString() {
+        String reporte = "Pago Luz Electrica:\n";
+        reporte = String.format("%Ciudad: %s\n"
+                + "Tarifa Base: $%.2f\n"
+                + "Kilovatios Consumidos: $%.2f\n"
+                + "Costo Kilovatio: $%.2f\n"
+                + "Total: $%.2f",
+                reporte,
+                ciudad,
+                tarifaBase,
+                kilovatiosConsumidos,
+                costoKilovatio,
+                pagos);
+        return reporte;
+    }
+    
 }
