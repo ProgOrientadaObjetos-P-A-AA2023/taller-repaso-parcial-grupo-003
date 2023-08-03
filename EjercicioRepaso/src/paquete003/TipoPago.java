@@ -1,6 +1,5 @@
 package paquete003;
 
-import java.util.ArrayList;
 
 public abstract class TipoPago {
     

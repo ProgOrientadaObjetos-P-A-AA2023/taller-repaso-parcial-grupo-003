@@ -12,12 +12,36 @@ import paquete003.*;
  * @author reroes
  */
 public class PagoTelefonoConvencional extends TipoPago {
-    
+
+    private final double tarifa;
+    private final double minutosConsumidos;
+    private final double costoMinuto;
+
+    public PagoTelefonoConvencional(double tar, double minConsumidos,
+            double costoMin) {
+        tarifa = tar;
+        minutosConsumidos = minConsumidos;
+        costoMinuto = costoMin;
+    }
+
     @Override
     public void calcularPagos() {
-        double tarifa = 6.20;
-        double minutosConsumidos = 100;
-        double costoMinuto = 0.2;
         pagos = tarifa + (minutosConsumidos * costoMinuto);
     }
+
+    @Override
+    public String toString() {
+        String reporte = "Pago Telefono Convencional:\n";
+        reporte = String.format("%sTarifa normal: $%.2f\n"
+                + "Minutos consumidos: %.2f\n"
+                + "Costo de minutos: $%.2f\n"
+                + "Total: %.2f\n",
+                reporte,
+                tarifa,
+                minutosConsumidos,
+                costoMinuto,
+                pagos);
+        return reporte;
+    }
+
 }

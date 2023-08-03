@@ -9,9 +9,7 @@ package paquete006;
  * @author reroes
  */
 public class DatosPropiedades {
-    /*
     
-    */
     public static double[][] datos(){
         double[][] informacion = {
             {120000, 10},

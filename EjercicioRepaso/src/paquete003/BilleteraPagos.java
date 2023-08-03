@@ -69,6 +69,7 @@ public class BilleteraPagos {
         return listaPagos;
     }
     
+    @Override
     public String toString(){
         /*
             Se debe presentar el reporte que incluya
@@ -90,6 +91,10 @@ public class BilleteraPagos {
                 persona.obtenerCiudad().obtenerNombreCiudad(),
                 mes,
                 gastoPagos);
+        for (int i = 0; i < listaPagos.size(); i++) {
+             reporte = String.format("%s\n%s", listaPagos.get(i).toString(), reporte);
+        }
+       
         
         return reporte;
     }

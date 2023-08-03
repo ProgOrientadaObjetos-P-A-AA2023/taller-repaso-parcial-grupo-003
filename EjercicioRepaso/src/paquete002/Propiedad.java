@@ -9,18 +9,26 @@ package paquete002;
  * @author reroes
  */
 public class Propiedad {
-    public double costoPropiedad;
-    
-    public Propiedad(double c) {
+    private double costoPropiedad;
+    private double porcentaje;
+    public Propiedad(double c, double porcen) {
         costoPropiedad = c;
+        porcentaje = porcen;
     }
-    
+    public void establecerPorcentaje(double p) {
+        porcentaje = p;
+    }
+       
     public void establecerCostoPropiedad(double c) {
         costoPropiedad = c;
     }
     
     public double obtenerCostoPropiedad() {
         return costoPropiedad;
+    }
+    
+    public double obtenerPorcentaje() {
+        return porcentaje;
     }
     
 }

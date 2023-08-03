@@ -12,40 +12,38 @@ import paquete003.*;
  * @author reroes
  */
 public class PagoAguaPotable extends TipoPago {
-    
-    private String tipo;
+
+    private final String tipo;
     double tarifaFija;
     double metrosCubicosConsumo;
     double costoConsumoCubicos;
-    
-    public PagoAguaPotable(String t) {
+
+    public PagoAguaPotable(String t, double tF, double meCubicos,
+            double costoConsumo) {
         tipo = t;
+        tarifaFija = tF;
+        metrosCubicosConsumo = meCubicos;
+        costoConsumoCubicos = costoConsumo;
     }
-    
+
     @Override
-    public void calcularPagos(){
+    public void calcularPagos() {
         //double pago = 0;
-        if(tipo.equals("comercial")){
-            tarifaFija = 2.20;
-            metrosCubicosConsumo = 100.2;
-            costoConsumoCubicos = 0.2;
+        if (tipo.equals("comercial")) {
             pagos = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos) + 15;
-        }else{
-            tarifaFija = 2.20;
-            metrosCubicosConsumo = 100.2;
-            costoConsumoCubicos = 0.2;
+        } else {
             pagos = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos);
         }
     }
-    
+
     @Override
     public String toString() {
         String reporte = "Pago Agua Potable:\n";
         reporte = String.format("%sTipo: %s\n"
                 + "Tarifa Fija: $%.2f\n"
-                + "Metros Cubicos Consumo: $%.2f\n"
+                + "Metros Cubicos Consumo: %.2f\n"
                 + "Costo Consumo Cubicos: $%.2f\n"
-                + "Total: $%.2f",
+                + "Total: $%.2f\n",
                 reporte,
                 tipo,
                 tarifaFija,
